@@ -20,6 +20,10 @@ sudo firewall-cmd --zone=public --add-port=8000/tcp --permanent
 sudo firewall-cmd --reload
 ```
 
+PHPサーバーを立てる際に、`localhost`ではなく、`0.0.0.0`を使います。
+
+`php -S 0.0.0.0:8000`
+
 これでローカルから以下のURLでサーバーにアクセスできます。
 
 `<仮想マシンIP>:8000`
