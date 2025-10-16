@@ -6,6 +6,7 @@ sudo dnf module enable php:remi-8.5 -y
 sudo dnf install php-cli --nobest --skip-broken -y
 ```
 
-phpのフォルダから以下を実行（index.phpがあるところ）
+# PHPサーバーを立てる
+`php`のフォルダから以下を実行（`index.php`があるところ）
 
 `php -S localhost:8000`
