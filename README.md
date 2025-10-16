@@ -10,3 +10,20 @@ sudo dnf install php-cli --nobest --skip-broken -y
 `php`のフォルダから以下を実行（`index.php`があるところ）
 
 `php -S localhost:8000`
+
+# サーバーにローカルのブラウザからアクセスする
+
+仮想マシン内のブラウザから`localhost:8000`にはアクセスできるが、ローカルのブラウザからもアクセスしたい場合、以下のコマンドでファイアウォールの8000のTCPポートを開放します。
+
+```
+sudo firewall-cmd --zone=public --add-port=8000/tcp --permanent
+sudo firewall-cmd --reload
+```
+
+これでローカルから以下のURLでサーバーにアクセスできます。
+
+`<仮想マシンIP>:8000`
+
+# ファイアウォールからポート設定をもとに戻す
+
+`sudo firewall-cmd --zone=public --remove-port=8000/tcp --permanent`
